@@ -129,3 +129,5 @@ ulimit -n 10000
 
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
