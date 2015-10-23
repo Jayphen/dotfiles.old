@@ -1,1 +1,17 @@
-/Users/Jayphen/.gitconfig
+[core]
+	editor = nvim -f
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[user]
+	name = Jayphen
+	email = jayphen@gmail.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = upstream
+[branch]
+	autosetuprebase = always
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
