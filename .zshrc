@@ -126,7 +126,6 @@ KEYTIMEOUT=1
 
 ulimit -n 10000
 
-
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
 

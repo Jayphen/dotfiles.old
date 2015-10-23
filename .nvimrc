@@ -1,4 +1,4 @@
-so .vimrc
+so ~/.dotfiles/.vimrc
 
 " Neovim stuff
 " ==============
