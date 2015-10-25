@@ -1,7 +1,14 @@
 set -g -x PATH /usr/local/bin $PATH
 
+# PLATFORM is Linux or Darwin (Mac)
+set PLATFORM (uname)
+
 function fish_greeting
-  fortune -a | cowsay
+  if test "$PLATFORM" = 'Darwin'
+    fortune -a | cowsay
+  else
+    cowsay "Hello handsome"
+  end
 end
 
 function fuck -d 'Correct your previous console command'
