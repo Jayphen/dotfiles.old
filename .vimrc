@@ -104,6 +104,9 @@ Plug 'dag/vim-fish'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" Load .local.vimrc in project dir
+Plug 'thinca/vim-localrc'
+
 call plug#end()
 
 colorscheme pencil
@@ -202,6 +205,9 @@ nmap <leader>qq :quit<CR>
 nmap <silent><leader>c :clo<CR>
 nmap <silent><leader>v :vspl<CR>
 nmap <silent><leader>s :spl<CR>
+
+nmap <leader>ff :FZF<CR>
+nmap <leader>fx :FZF -x<CR>
 
 
 so ~/.vim/settings.vim
