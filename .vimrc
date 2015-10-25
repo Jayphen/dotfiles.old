@@ -102,6 +102,8 @@ Plug 'dag/vim-fish'
   autocmd FileType fish setlocal foldmethod=expr
 " }}}
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 call plug#end()
 
 colorscheme pencil
