@@ -30,8 +30,14 @@ end
 function gst
   git status
 end
-function gl
+function lg
   git log
+end
+function gl
+  git pull
+end
+function grhh
+  git reset --hard HEAD
 end
 function recent
   ls -lat | head
@@ -45,7 +51,8 @@ fzf_key_bindings
 alias vim="nvim"
 
 # Mac OS X helper utilities
-alias hide-desktop 'defaults write com.apple.finder CreateDesktop false; killall Finder'
-alias show-desktop 'defaults write com.apple.finder CreateDesktop true; killall Finder'
-
+if test "$PLATFORM" = 'Darwin'
+  alias hide-desktop 'defaults write com.apple.finder CreateDesktop false; killall Finder'
+  alias show-desktop 'defaults write com.apple.finder CreateDesktop true; killall Finder'
+end
 # }}}
