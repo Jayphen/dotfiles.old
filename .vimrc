@@ -1,4 +1,5 @@
 set nocompatible
+set shell=/bin/sh
 " UTF-8
 set encoding=utf-8
 
@@ -51,7 +52,7 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/.bundle/*,*/.sass-cache/*
 set wildignore+=*/node_modules/*
 
-syntax on
+syntax enable
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
@@ -87,6 +88,19 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Fish syntax
+Plug 'dag/vim-fish'
+" {{{
+  " Set up :make to use fish for syntax checking.
+  autocmd FileType fish compiler fish
+
+  " Set this to have long lines wrap inside comments.
+  autocmd FileType fish setlocal textwidth=79
+
+  " Enable folding of block structures in fish.
+  autocmd FileType fish setlocal foldmethod=expr
+" }}}
 
 call plug#end()
 

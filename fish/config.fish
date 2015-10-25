@@ -15,3 +15,30 @@ function fuck -d 'Correct your previous console command'
         history --delete $fucked_up_commandd
     end
 end
+
+# Autojump init
+[ -f /usr/local/share/autojump/autojump.fish ]; and . /usr/local/share/autojump/autojump.fish
+
+# Some basic functions
+function gst
+  git status
+end
+function gl
+  git log
+end
+function recent
+  ls -lat | head
+end
+
+# Load Fuzzy Finder
+fzf_key_bindings
+
+# Handy aliases {{{
+
+alias vim="nvim"
+
+# Mac OS X helper utilities
+alias hide-desktop 'defaults write com.apple.finder CreateDesktop false; killall Finder'
+alias show-desktop 'defaults write com.apple.finder CreateDesktop true; killall Finder'
+
+# }}}
