@@ -160,6 +160,8 @@ nnoremap <silent> <leader>z :ZoomToggle<CR>
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 
+" Some bindings
+" ==============
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
 nmap <leader>T :enew<cr>
@@ -179,5 +181,11 @@ nmap <leader>bl :ls<CR>
 
 " Quit window
 nmap <leader>qq :quit<CR>
+
+" Splits
+nmap <silent><leader>c :clo<CR>
+nmap <silent><leader>v :vspl<CR>
+nmap <silent><leader>s :spl<CR>
+
 
 so ~/.vim/settings.vim
