@@ -25,6 +25,7 @@ end
 
 # Autojump init
 [ -f /usr/local/share/autojump/autojump.fish ]; and . /usr/local/share/autojump/autojump.fish
+[ -f ~/.autojump/share/autojump/autojump.fish ]; and . ~/.autojump/share/autojump/autojump.fish
 
 # Some basic functions
 function gst
