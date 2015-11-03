@@ -59,6 +59,12 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
+" {{{
+  " Start interactive EasyAlign in visual mode (e.g. vipga)
+  xmap ga <Plug>(EasyAlign)
+  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
+" }}}
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'kien/ctrlp.vim'
@@ -85,21 +91,28 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-easytags'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
+Plug 'mattn/emmet-vim'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" {{{
+  :let NERDTreeQuitOnOpen = 1
+" }}}
 
 " Fish syntax
 Plug 'dag/vim-fish'
 " {{{
   " Set up :make to use fish for syntax checking.
-  autocmd FileType fish compiler fish
+  augroup vimfish
+    autocmd FileType fish compiler fish
 
-  " Set this to have long lines wrap inside comments.
-  autocmd FileType fish setlocal textwidth=79
+    " Set this to have long lines wrap inside comments.
+    autocmd FileType fish setlocal textwidth=79
 
-  " Enable folding of block structures in fish.
-  autocmd FileType fish setlocal foldmethod=expr
+    " Enable folding of block structures in fish.
+    autocmd FileType fish setlocal foldmethod=expr
+  augroup END
 " }}}
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -178,6 +191,33 @@ nnoremap <silent> <leader>z :ZoomToggle<CR>
 " This allows buffers to be hidden if you've modified a buffer.
 " This is almost a must if you wish to use buffers in this way.
 set hidden
+
+" filetype settings
+" ===================
+augroup configgroup
+  autocmd!
+  autocmd VimEnter * highlight clear SignColumn
+  autocmd FileType java setlocal noexpandtab
+  autocmd FileType java setlocal list
+  autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+  autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+  autocmd FileType php setlocal expandtab
+  autocmd FileType php setlocal list
+  autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+  autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+  autocmd FileType php setlocal sts=4 ts=4 sw=4 expandtab
+  autocmd FileType ruby setlocal tabstop=2
+  autocmd FileType ruby setlocal shiftwidth=2
+  autocmd FileType ruby setlocal softtabstop=2
+  autocmd FileType ruby setlocal commentstring=#\ %s
+  autocmd FileType python setlocal commentstring=#\ %s
+  autocmd BufEnter *.cls setlocal filetype=java
+  autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+  autocmd BufEnter Makefile setlocal noexpandtab
+  autocmd BufEnter *.sh setlocal tabstop=2
+  autocmd BufEnter *.sh setlocal shiftwidth=2
+  autocmd BufEnter *.sh setlocal softtabstop=2
+augroup END
 
 " Some bindings
 " ==============

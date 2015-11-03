@@ -1,4 +1,5 @@
 set -g -x PATH /usr/local/bin $PATH
+set -g -x PATH /home/jayphen/.node_modules_global/bin $PATH
 
 # PLATFORM is Linux or Darwin (Mac)
 set PLATFORM (uname)
@@ -29,7 +30,7 @@ end
 
 # Some basic functions
 function gst
-  git status
+  git status -sb
 end
 function lg
   git log
