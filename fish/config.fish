@@ -4,6 +4,10 @@ set -g -x PATH /home/jayphen/.node_modules_global/bin $PATH
 # PLATFORM is Linux or Darwin (Mac)
 set PLATFORM (uname)
 
+if uname -a | ag "amzn" >/dev/null
+  set -g -x PATH /usr/bin/pb $PATH
+end
+
 function fish_greeting
   if test "$PLATFORM" = 'Darwin'
     fortune -a | cowsay
