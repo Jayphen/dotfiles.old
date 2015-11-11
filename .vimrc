@@ -83,7 +83,7 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'reedes/vim-colors-pencil'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'kchmck/vim-coffee-script'
 " Set working dir to root automatically
 Plug 'airblade/vim-rooter'
 " Better buffer handling
@@ -93,6 +93,7 @@ Plug 'xolox/vim-easytags'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'mattn/emmet-vim'
+Plug 'jacob-ogre/vim-syncr'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -249,5 +250,8 @@ nmap <silent><leader>s :spl<CR>
 nmap <leader>ff :FZF<CR>
 nmap <leader>fx :FZF -x<CR>
 
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
 
 so ~/.vim/settings.vim
