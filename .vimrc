@@ -207,6 +207,7 @@ augroup configgroup
   autocmd FileType php setlocal listchars=tab:+\ ,eol:-
   autocmd FileType php setlocal formatprg=par\ -w80\ -T4
   autocmd FileType php setlocal sts=4 ts=4 sw=4 expandtab
+  autocmd FileType javascript setlocal sts=4 ts=4 sw=4 expandtab
   autocmd FileType ruby setlocal tabstop=2
   autocmd FileType ruby setlocal shiftwidth=2
   autocmd FileType ruby setlocal softtabstop=2
