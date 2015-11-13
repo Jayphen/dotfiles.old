@@ -2,3 +2,4 @@ shada
 .vim/view
 npm-debug.log
 .vim/.netrwhist
+.vim/plugged/*
