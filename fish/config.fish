@@ -36,6 +36,9 @@ end
 function gst
   git status -sb
 end
+function gco
+  git checkout $argv
+end
 function lg
   git log
 end
