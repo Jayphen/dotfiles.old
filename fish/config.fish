@@ -1,5 +1,6 @@
 set -g -x PATH /usr/local/bin $PATH
 set -g -x PATH /home/jayphen/.node_modules_global/bin $PATH
+# set -g -x PATH $HOME/.rbenv/shims $PATH
 
 # PLATFORM is Linux or Darwin (Mac)
 set PLATFORM (uname)
@@ -59,9 +60,13 @@ fzf_key_bindings
 
 alias vim="nvim"
 
+# Init rbenv
+# status --is-interactive; and . (rbenv init -|psub)
+
 # Mac OS X helper utilities
 if test "$PLATFORM" = 'Darwin'
   alias hide-desktop 'defaults write com.apple.finder CreateDesktop false; killall Finder'
   alias show-desktop 'defaults write com.apple.finder CreateDesktop true; killall Finder'
 end
 # }}}
+rvm default

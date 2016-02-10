@@ -130,3 +130,5 @@ ulimit -n 10000
 . $HOME/.zsh/plugins/bd/bd.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

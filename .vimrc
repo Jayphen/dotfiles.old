@@ -94,6 +94,7 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'mattn/emmet-vim'
 Plug 'jacob-ogre/vim-syncr'
+Plug 'slim-template/vim-slim'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
