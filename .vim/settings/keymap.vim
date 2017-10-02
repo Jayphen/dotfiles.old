@@ -27,4 +27,3 @@ nmap <silent> <Leader>x :clo<CR>
 
 nmap <Leader>t :tabnew<CR>
 
-map <leader>f /
